@@ -1,0 +1,129 @@
+
+body, html {
+  line-height: 1;
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #666;
+  font-size: 26px;
+}
+li {
+  list-style: none
+}
+
+.clear-fix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.omit {
+  word-break: keep-all;/* 不换行 */
+  white-space: nowrap; /* 不换行 */
+  text-overflow: ellipsis; // 当对象内文本溢出时显示省略标记(...)
+  overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+  //display: -webkit-box;  // flex布局 父元素设min-width: 0; 只支持webkit浏览器
+  //-webkit-box-orient: vertical;
+  //-webkit-line-clamp: 1;
+}
+
+.border-top-1px,.border-right-1px,.border-bottom-1px,.border-left-1px {
+  position: relative;
+  &::before, &::after {
+  content: "";
+  display: block;
+  position: absolute;
+  transform-origin: 0 0;
+}
+}
+.border-top-1px {
+  &::before {
+    border-top: 1px solid #e8e8e8;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform-origin: 0 top;
+  }
+}
+.border-right-1px {
+  &::after {
+    border-right: 1px solid #e8e8e8;
+    top: 0;
+    right: 0;
+    height: 100%;
+    transform-origin: right 0;
+  }
+}
+.border-bottom-1px {
+  &::after {
+    border-bottom: 1px solid #e8e8e8;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform-origin: 0 bottom;
+  }
+}
+.border-left-1px {
+  &::before {
+    border-left: 1px solid #e8e8e8;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform-origin: left 0;
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  .border-top-1px {
+    &::before {
+      width: 200%;
+      transform: scale(.5) translateZ(0);
+    }
+  }
+  .border-right-1px {
+    &::after {
+      height: 200%;
+      transform: scale(.5) translateZ(0);
+    }
+  }
+  .border-bottom-1px {
+    &::after {
+      width: 200%;
+      transform: scale(.5) translateZ(0);
+    }
+  }
+  .border-left-1px {
+    &::before {
+      height: 200%;
+      transform: scale(.5) translateZ(0);
+    }
+  }
+}
+
+@media (min-resolution: 3dppx) {
+  .border-top-1px {
+    &::before {
+      width: 300%;
+      transform: scale(.333) translateZ(0);
+    }
+  }
+  .border-right-1px {
+    &::after {
+      height: 300%;
+      transform: scale(.333) translateZ(0);
+    }
+  }
+  .border-bottom-1px {
+    &::after {
+      width: 300%;
+      transform: scale(.333) translateZ(0);
+    }
+  }
+  .border-left-1px {
+    &::before {
+      height: 300%;
+      transform: scale(.333) translateZ(0);
+    }
+  }
+}
