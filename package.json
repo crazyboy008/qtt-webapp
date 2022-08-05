@@ -26,7 +26,7 @@
     "mand-mobile": "^2.5.3",
     "md5": "^2.2.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.7.3",
+    "mongoose": "^5.7.5",
     "node-taobao-topclient": "^0.1.7",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-cssnext": "^3.1.0",
